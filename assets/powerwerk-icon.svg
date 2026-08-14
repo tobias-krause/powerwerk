@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
   <title id="title">PowerWerk Sonnenaufgang</title>
-  <circle cx="32" cy="32" r="29" fill="#FAF9F6"/>
+  <circle cx="32" cy="32" r="29" fill="#F6F1DC"/>
 
   <g fill="#3BA0C4">
     <path d="M29.5 18 32 4l2.5 14Z"/>
@@ -14,6 +14,6 @@
     <path d="m50 35.4 13-1.5-14-3.2Z"/>
   </g>
 
-  <path d="M13 40a19 19 0 0 1 38 0Z" fill="#1A1A1A" stroke="#FAF9F6" stroke-width="2.4" stroke-linejoin="round"/>
-  <path d="M4 49.5Q32 37.5 60 49.5v5Q32 43 4 54.5Z" fill="#3BA0C4" stroke="#FAF9F6" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M13 40a19 19 0 0 1 38 0Z" fill="#3BA0C4" stroke="#F6F1DC" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M4 49.5Q32 37.5 60 49.5v5Q32 43 4 54.5Z" fill="#3BA0C4" stroke="#F6F1DC" stroke-width="2.4" stroke-linejoin="round"/>
 </svg>
