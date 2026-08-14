@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PowerWerk | Die moderne Energiemanufaktur</title>
+<meta name="description" content="PowerWerk vereint Strom, Wärme, Kühlung und Mobilität in einem intelligenten Gesamtsystem für Zuhause und E-Auto.">
+<meta name="theme-color" content="#FAF9F6">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24..48,500,0,0" rel="stylesheet">
+<style>
+:root{--bg:#FAF9F6;--bg2:#F3F1EC;--surface:#fff;--border:#E5E2DC;--text:#1A1A1A;--muted:#6B6960;--quiet:#7F7B73;--blue:#3BA0C4;--blue-dark:#2D5A6B;--blue-pale:#DDF2F5;--blue-wash:#EDF7FB;--green:#2D6B3F;--green-pale:#E2F2E2;--red:#9B3B42;--red-pale:#FFE3E8;--gold:#7A6B2D;--gold-pale:#FFFBD6;--shadow:0 18px 46px rgba(26,26,26,.06),0 10px 28px rgba(59,160,196,.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.container{width:min(1180px,calc(100% - 64px));margin:0 auto}
+.nav{position:sticky;top:0;z-index:20;height:69px;display:flex;align-items:center;background:rgba(250,249,246,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(229,226,220,.9)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;letter-spacing:-.4px;text-decoration:none}.brand span{color:var(--blue)}
+.nav-note{display:inline-flex;align-items:center;gap:9px;font-size:12px;color:var(--muted);font-weight:600}.live-dot{width:8px;height:8px;border-radius:50%;background:#7EB8C9;box-shadow:0 0 0 5px rgba(126,184,201,.12);animation:pulse 1.8s ease-in-out infinite}@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(126,184,201,0)}}
+.nav-tag{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--blue);border:1px solid rgba(59,160,196,.24);background:var(--blue-wash);padding:7px 11px;border-radius:999px;font-weight:700}
+.nav-menu{position:relative}.nav-menu summary{display:flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid rgba(59,160,196,.24);border-radius:999px;background:var(--blue-wash);color:var(--blue-dark);font-size:11px;font-weight:700;list-style:none;cursor:pointer;user-select:none}.nav-menu summary::-webkit-details-marker{display:none}.nav-menu summary:focus-visible{outline:3px solid rgba(59,160,196,.22);outline-offset:3px}.nav-chevron{font-size:18px;transition:transform .2s ease}.nav-menu[open] .nav-chevron{transform:rotate(180deg)}
+.nav-dropdown{position:absolute;right:0;top:calc(100% + 12px);width:min(310px,calc(100vw - 36px));padding:10px;background:rgba(255,255,255,.98);border:1px solid var(--border);border-radius:16px;box-shadow:0 22px 55px rgba(26,26,26,.14);backdrop-filter:blur(15px)}.nav-dropdown>a{display:block;padding:11px 12px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:700;color:var(--text)}.nav-dropdown>a:hover,.nav-dropdown>a:focus-visible{background:var(--blue-wash);color:var(--blue-dark);outline:none}.nav-dropdown-steps{display:grid;gap:2px;margin:4px 0 2px 13px;padding:8px 0 0 13px;border-top:1px solid var(--border);border-left:1px solid rgba(59,160,196,.22)}.nav-dropdown-steps a{display:grid;grid-template-columns:25px 1fr;gap:8px;align-items:center;padding:7px 8px;border-radius:8px;text-decoration:none;color:var(--muted);font-size:11px;font-weight:600}.nav-dropdown-steps a span{font:500 9px 'JetBrains Mono',monospace;color:var(--blue)}.nav-dropdown-steps a:hover,.nav-dropdown-steps a:focus-visible{background:var(--blue-wash);color:var(--blue-dark);outline:none}
+.hero{position:relative;padding:90px 0 90px;overflow:hidden;border-bottom:1px solid var(--border);scroll-margin-top:69px}
+.hero::before{content:"";position:absolute;inset:-160px -10% auto;height:620px;z-index:-2;background:radial-gradient(circle at 22% 42%,rgba(202,233,245,.85),transparent 42%),radial-gradient(circle at 84% 38%,rgba(244,228,174,.55),transparent 35%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(250,249,246,.06),var(--bg) 94%)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:2.35px;text-transform:uppercase;color:var(--blue);margin-bottom:18px}
+.hero h1{max-width:930px;font-family:'Playfair Display',serif;font-size:clamp(43px,6.3vw,74px);font-weight:300;letter-spacing:-2.5px;line-height:1.05}.hero h1 em{font-style:normal;color:var(--blue)}
+.hero-copy{max-width:880px;margin-top:24px;font-size:18px;line-height:1.7;color:var(--muted)}
+.hero-system{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:40px}
+.system-card{--system-accent:#F4A9B5;--system-soft:var(--red-pale);--system-ink:var(--red);min-height:218px;padding:24px 22px 25px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(250,249,246,.92));border:1px solid rgba(229,226,220,.95);border-top:4px solid var(--system-accent);border-radius:19px;box-shadow:0 15px 34px rgba(26,26,26,.055);display:flex;flex-direction:column;align-items:flex-start}
+.system-card:nth-child(2){--system-accent:#A9E3B6;--system-soft:var(--green-pale);--system-ink:var(--green)}.system-card:nth-child(3){--system-accent:#A8CBD8;--system-soft:var(--blue-pale);--system-ink:var(--blue-dark)}.system-card:nth-child(4){--system-accent:#F1E79B;--system-soft:var(--gold-pale);--system-ink:var(--gold)}
+.system-icon{position:relative;display:grid;place-items:center;width:62px;height:62px;margin-bottom:25px;border-radius:16px;background:var(--system-soft);color:var(--system-ink);font-family:'DM Sans',sans-serif;font-size:27px;font-weight:600;line-height:1}
+.system-icon.solar{font-size:32px}.system-icon.climate{font-size:23px;letter-spacing:-1.4px}.system-icon.ev{font-size:20px;letter-spacing:-.7px}
+.system-icon.battery::before{content:"";width:29px;height:17px;border:3px solid currentColor;border-radius:4px}.system-icon.battery::after{content:"";position:absolute;right:13px;width:5px;height:10px;border-radius:0 3px 3px 0;background:currentColor}
+.system-kicker{font-size:10px;font-weight:700;letter-spacing:1.35px;text-transform:uppercase;color:var(--system-ink);margin-bottom:11px}.system-card h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:500;letter-spacing:-.35px;line-height:1.18;margin-bottom:10px}.system-card p{font-size:12px;line-height:1.55;color:var(--muted)}
+.powerwerk-offer{padding:92px 0 96px;background:var(--bg);border-bottom:1px solid var(--border);scroll-margin-top:69px}.offer-head{display:grid;grid-template-columns:minmax(300px,.85fr) minmax(360px,1.15fr);gap:55px;align-items:end;margin-bottom:30px}.offer-head h2{font-family:'Playfair Display',serif;font-size:clamp(36px,4.6vw,52px);font-weight:300;letter-spacing:-1.25px;line-height:1.08}.offer-head>p{font-size:15px;line-height:1.7;color:var(--muted);max-width:610px}.offer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr;gap:14px}.offer-card{min-height:310px;padding:25px 22px 24px;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(250,249,246,.94));border:1px solid rgba(59,160,196,.2);border-top:3px solid var(--blue);border-radius:18px;box-shadow:0 14px 32px rgba(45,90,107,.06)}.offer-logo{display:grid;place-items:center;width:60px;height:60px;margin-bottom:23px;border-radius:17px;background:linear-gradient(145deg,#E8F7FA,var(--blue-pale));color:var(--blue-dark);box-shadow:inset 0 0 0 1px rgba(59,160,196,.15),0 10px 22px rgba(59,160,196,.1)}.offer-logo .material-symbols-rounded{font-size:34px;font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 48}.offer-kicker{display:block;margin-bottom:10px;font-size:9px;font-weight:700;letter-spacing:1.15px;text-transform:uppercase;color:var(--blue)}.offer-card h3{font-family:'Playfair Display',serif;font-size:23px;font-weight:500;letter-spacing:-.35px;line-height:1.2;margin-bottom:10px}.offer-card p{font-size:12px;line-height:1.62;color:var(--muted)}.offer-note{margin-top:13px;font-size:9px;line-height:1.55;color:var(--quiet)}
+.offer-head{display:block}.offer-head>p{margin-top:18px}
+.value{padding:92px 0 100px;background:var(--bg2);border-bottom:1px solid var(--border);scroll-margin-top:69px}
+.value-lead{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:45px;align-items:end}
+.value h2,.section-head h2{font-family:'Playfair Display',serif;font-size:clamp(36px,4.9vw,54px);font-weight:300;letter-spacing:-1.35px;line-height:1.1}
+.value-lead-copy{font-size:16px;line-height:1.7;color:var(--muted)}
+.season-card{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;margin-top:34px;padding:28px;background:linear-gradient(180deg,#fff,rgba(250,249,246,.98));color:var(--text);border:1px solid rgba(59,160,196,.2);border-top:3px solid var(--blue);border-radius:18px;box-shadow:0 14px 32px rgba(45,90,107,.065)}
+.season-card h3{font-family:'Playfair Display',serif;font-size:27px;font-weight:400;letter-spacing:-.5px;margin-bottom:9px}.season-card p{max-width:690px;color:var(--muted);font-size:13px;line-height:1.6}
+.months{display:grid;grid-template-columns:repeat(6,34px);gap:6px}.month{display:grid;place-items:center;height:30px;border:1px solid var(--border);border-radius:8px;background:var(--bg2);color:var(--quiet);font:500 9px 'JetBrains Mono',monospace}.month.on{background:var(--blue-wash);border-color:rgba(59,160,196,.22);color:var(--blue-dark)}.month.strong{background:var(--blue);border-color:var(--blue);color:white}
+.value-source{margin-top:10px;text-align:right;font-size:10px;color:var(--quiet)}.value-source a{text-underline-offset:3px}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:13px;margin-top:30px}
+.value-card{min-height:290px;padding:28px 26px;background:linear-gradient(180deg,#fff,rgba(250,249,246,.98));border:1px solid rgba(59,160,196,.2);border-top:3px solid var(--blue);border-radius:18px;box-shadow:0 14px 32px rgba(45,90,107,.065)}
+.value-logo{position:relative;display:grid;place-items:center;width:78px;height:78px;margin-bottom:25px;border-radius:22px;background:linear-gradient(145deg,#E8F7FA,var(--blue-pale));color:var(--blue-dark);box-shadow:inset 0 0 0 1px rgba(59,160,196,.16),0 12px 25px rgba(59,160,196,.12);overflow:hidden}.value-logo::before{content:"";position:absolute;width:52px;height:52px;border:1px solid rgba(59,160,196,.13);border-radius:50%}.value-logo .material-symbols-rounded{position:relative;z-index:1;font-size:43px;line-height:1;font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 48}.value-card h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;line-height:1.24;margin-bottom:10px}.value-card p{font-size:13px;color:var(--muted);line-height:1.62}
+.calculator{padding:100px 0 110px;scroll-margin-top:69px}.calculator-meta{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:30px}.section-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:end;margin-bottom:38px}.section-head>p{font-size:16px;line-height:1.7;color:var(--muted);max-width:600px}
+.offer-head,.value-lead,.section-head{display:block}.offer-head>p,.value-lead-copy,.section-head>p{max-width:880px;margin-top:18px}
+.calc-roadmap{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;padding:22px 28px 20px;background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(250,249,246,.96));border:1px solid var(--border);border-radius:18px;box-shadow:0 12px 28px rgba(26,26,26,.04)}.calc-roadmap::before{content:"";position:absolute;left:12.5%;right:12.5%;top:42px;height:1px;background:linear-gradient(90deg,var(--blue),rgba(59,160,196,.22))}.roadmap-step{position:relative;z-index:1;display:grid;justify-items:center;gap:11px;text-align:center;text-decoration:none;color:var(--muted)}.roadmap-no{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--blue-wash);border:1px solid rgba(59,160,196,.25);color:var(--blue-dark);font:500 11px 'JetBrains Mono',monospace;box-shadow:0 0 0 6px rgba(250,249,246,.96);transition:.2s ease}.roadmap-label{font-size:12px;font-weight:700;line-height:1.35;transition:.2s ease}.roadmap-step:first-child .roadmap-no{background:var(--blue);border-color:var(--blue);color:white}.roadmap-step:hover .roadmap-no{transform:translateY(-2px);border-color:var(--blue)}.roadmap-step:hover .roadmap-label{color:var(--blue-dark)}.roadmap-step:focus-visible{outline:3px solid rgba(59,160,196,.22);outline-offset:5px;border-radius:10px}
+.calc-form{display:grid;gap:24px}.box{scroll-margin-top:92px;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(250,249,246,.96));border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+.box-head{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:28px 32px 24px;border-bottom:1px solid var(--border)}.box-no{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--blue-pale);color:var(--blue-dark);font:500 12px 'JetBrains Mono',monospace}.box-kicker{font:500 10px 'JetBrains Mono',monospace;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}.box-title{font-family:'Playfair Display',serif;font-size:29px;font-weight:400;letter-spacing:-.6px}.box-sub{font-size:13px;color:var(--muted);line-height:1.55;margin-top:5px}
+.box-body{padding:30px 32px 34px}.household-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.input-card{padding:20px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.72)}.input-top{display:flex;align-items:start;justify-content:space-between;gap:15px;margin-bottom:18px}.input-label{font-size:13px;font-weight:700}.input-help{font-size:10px;color:var(--quiet);line-height:1.4;margin-top:4px}.input-value{font-family:'Playfair Display',serif;color:var(--blue-dark);font-size:24px;white-space:nowrap}.range{width:100%;height:5px;appearance:none;border-radius:999px;background:linear-gradient(90deg,var(--blue) var(--fill,50%),#E7E4DD var(--fill,50%));outline:none}.range::-webkit-slider-thumb{appearance:none;width:20px;height:20px;border-radius:50%;background:white;border:2px solid var(--blue);box-shadow:0 3px 8px rgba(26,26,26,.15)}.range::-moz-range-thumb{width:17px;height:17px;border-radius:50%;background:white;border:2px solid var(--blue)}.range:focus-visible{outline:3px solid rgba(59,160,196,.2);outline-offset:7px}.range-scale{display:flex;justify-content:space-between;margin-top:10px;font:400 9px 'JetBrains Mono',monospace;color:var(--quiet)}
+.stepper{display:grid;grid-template-columns:38px 1fr 38px;align-items:center;gap:8px}.stepper button{height:38px;border:1px solid var(--border);background:white;border-radius:10px;font-size:19px;color:var(--blue-dark)}.stepper button:hover{border-color:var(--blue)}.stepper-output{text-align:center;font-family:'Playfair Display',serif;font-size:27px}.stepper-output span{font:400 11px 'DM Sans',sans-serif;color:var(--quiet);margin-left:5px}
+.standard-options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.choice{position:relative;display:block;cursor:pointer}.choice input{position:absolute;opacity:0;pointer-events:none}.choice-body{display:block;height:100%;padding:15px;border:1px solid var(--border);border-radius:13px;background:rgba(255,255,255,.72);transition:.2s ease}.choice input:checked+.choice-body{border-color:var(--blue);background:var(--blue-wash);box-shadow:0 0 0 3px rgba(59,160,196,.09)}.choice input:focus-visible+.choice-body,.switch input:focus-visible+.switch-track{outline:3px solid rgba(59,160,196,.24);outline-offset:2px}.choice-code{display:block;color:var(--quiet);font:500 10px 'JetBrains Mono',monospace;letter-spacing:.7px;margin-bottom:12px}.choice input:checked+.choice-body .choice-code{color:var(--blue)}.choice-title{display:block;font-size:13px;font-weight:700;line-height:1.35}.choice-sub{display:block;font-size:11px;color:var(--quiet);line-height:1.4;margin-top:4px}
+.situation-stack{display:grid;gap:26px}.question{border:0;border-bottom:1px solid var(--border);padding:0 0 26px;min-width:0}.question:last-child{border-bottom:0;padding-bottom:0}.question-top{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;width:100%;margin-bottom:15px}.question-no{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--blue-pale);color:var(--blue-dark);font:500 11px 'JetBrains Mono',monospace}.question h3{font-size:15px;line-height:1.35;font-weight:700}.question p{margin-top:3px;font-size:12px;color:var(--quiet);line-height:1.45}.segmented{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.segmented .choice-body{min-height:112px}.binary{display:grid;grid-template-columns:1fr 1fr;gap:9px}.binary .choice-body{min-height:62px;padding:13px 15px;display:flex;align-items:center;gap:10px}.binary .choice-code{margin:0;display:grid;place-items:center;width:25px;height:25px;flex:0 0 25px;border-radius:7px;background:var(--bg2)}.binary .choice input:checked+.choice-body .choice-code{background:white}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:14px 15px;border:1px solid var(--border);border-radius:13px;background:rgba(255,255,255,.72)}.toggle-copy b{display:block;font-size:13px}.toggle-copy span{display:block;font-size:11px;color:var(--quiet);line-height:1.4;margin-top:3px}.switch{position:relative;flex:0 0 auto;cursor:pointer}.switch input{position:absolute;opacity:0}.switch-track{display:block;position:relative;width:48px;height:28px;border-radius:999px;background:#D8D5CE;transition:.2s ease}.switch-track::after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:white;box-shadow:0 2px 6px rgba(26,26,26,.18);transition:.2s ease}.switch input:checked+.switch-track{background:var(--blue)}.switch input:checked+.switch-track::after{transform:translateX(20px)}
+.cost-hero{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.cost-metric{padding:23px 21px;border:1px solid var(--border);border-radius:15px;background:white}.cost-metric.primary{background:linear-gradient(145deg,#1A1A1A,#2A3032);color:white;border-color:#232829}.metric-label{font-size:10px;color:var(--quiet);text-transform:uppercase;letter-spacing:.85px;font-weight:700;line-height:1.35}.cost-metric.primary .metric-label{color:#B7DDE9}.metric-value{margin-top:13px;font-family:'Playfair Display',serif;font-size:clamp(29px,4vw,43px);letter-spacing:-1px;line-height:1}.metric-note{font-size:10px;color:var(--quiet);margin-top:8px;line-height:1.4}.cost-metric.primary .metric-note{color:#BAC0C0}.loan-rate{display:inline-flex;margin-top:8px;padding:5px 8px;border-radius:999px;background:var(--blue-wash);color:var(--blue-dark);font-size:9px;font-weight:700}.cost-detail{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;margin-top:26px;padding-top:25px;border-top:1px solid var(--border)}.cost-list{display:grid}.cost-line{display:flex;justify-content:space-between;gap:20px;padding:10px 0;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}.cost-line:first-child{border-top:0}.cost-line b{color:var(--text);font-weight:600;text-align:right}.cost-line.total{font-size:13px;color:var(--text);padding-top:13px}.cost-line.total b{color:var(--blue)}.cost-explain{padding:18px;border-radius:14px;background:var(--blue-wash);font-size:12px;line-height:1.6;color:var(--blue-dark)}.cost-explain strong{display:block;color:var(--text);font-size:13px;margin-bottom:7px}.cost-explain .big{font-family:'Playfair Display',serif;font-size:28px;color:var(--blue-dark);margin:12px 0 3px}.source-link{display:block;margin-top:12px;font-size:10px;color:var(--muted);text-underline-offset:3px}
+.cost-metric.primary{background:linear-gradient(180deg,var(--blue-wash),white);color:var(--text);border-color:rgba(59,160,196,.2)}.cost-metric.primary .metric-label{color:var(--blue)}.cost-metric.primary .metric-note{color:var(--muted)}
+.return-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.return-column{padding:24px;border:1px solid var(--border);border-radius:16px;background:white}.return-column.accent{background:linear-gradient(180deg,var(--blue-wash),white);border-color:rgba(59,160,196,.2)}.return-label{font:500 10px 'JetBrains Mono',monospace;color:var(--blue);letter-spacing:1px;text-transform:uppercase}.return-main{font-family:'Playfair Display',serif;font-size:clamp(35px,4.4vw,49px);letter-spacing:-1.4px;margin:16px 0 5px}.return-main small{font:400 12px 'DM Sans',sans-serif;color:var(--muted)}.return-sub{font-size:11px;color:var(--muted)}.return-stats{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:22px;border-top:1px solid var(--border)}.return-stat{padding:16px 12px 0 0}.return-stat:nth-child(even){padding-left:16px;border-left:1px solid var(--border)}.return-stat b{display:block;font-family:'Playfair Display',serif;font-size:23px;font-weight:400}.return-stat span{display:block;font-size:9px;color:var(--quiet);text-transform:uppercase;letter-spacing:.65px;margin-top:4px;line-height:1.4}.return-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.mini-result{padding:17px;border-radius:13px;background:var(--bg2);border:1px solid var(--border)}.mini-result span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.75px;color:var(--quiet);font-weight:700}.mini-result b{display:block;margin-top:9px;font-family:'Playfair Display',serif;font-size:24px;font-weight:400}.return-note{margin-top:15px;padding:13px 15px;border-radius:12px;background:var(--gold-pale);font-size:11px;color:var(--gold);line-height:1.55}
+.return-column{padding:28px 30px 30px}.return-card-head{display:flex;align-items:baseline;justify-content:space-between;gap:18px}.return-context{font-size:10px;color:var(--quiet);letter-spacing:.25px}.return-summary{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(135px,.7fr);margin-top:28px}.return-impact{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:27px;padding-top:24px;border-top:1px solid var(--border)}.return-metric{min-width:0;padding-right:18px}.return-summary .return-metric+.return-metric,.return-impact .return-metric+.return-metric{padding-left:20px;border-left:1px solid var(--border)}.return-value{display:block;font-family:'Playfair Display',serif;font-size:30px;font-weight:400;line-height:1.05;letter-spacing:-.6px;white-space:nowrap;color:var(--text)}.return-summary .return-metric:first-child .return-value{font-size:clamp(38px,4vw,50px);letter-spacing:-1.3px}.return-value.relative{color:var(--blue-dark)}.return-metric-label{display:block;margin-top:11px;font-size:9px;font-weight:700;line-height:1.35;letter-spacing:.75px;text-transform:uppercase;color:var(--muted)}.return-metric-period{display:block;margin-top:4px;font:500 8px 'JetBrains Mono',monospace;line-height:1.35;letter-spacing:.75px;text-transform:uppercase;color:var(--blue)}.model-footnote{display:grid;grid-template-columns:1fr;margin-top:48px;padding-top:34px;border-top:1px solid rgba(59,160,196,.35)}.footnote-head{display:grid;grid-template-columns:minmax(280px,.8fr) minmax(320px,1.2fr);gap:46px;align-items:end}.footnote-kicker{font:500 10px 'JetBrains Mono',monospace;letter-spacing:1.35px;text-transform:uppercase;color:var(--blue);margin-bottom:9px}.footnote-head h3{font-family:'Playfair Display',serif;font-size:31px;font-weight:400;letter-spacing:-.6px;line-height:1.12}.footnote-head>p{font-size:12px;line-height:1.65;color:var(--muted)}.footnote-columns{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:30px}.footnote-section{padding-top:17px;border-top:1px solid var(--border)}.footnote-section h4{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--blue-dark);margin-bottom:7px}.footnote-section>p{font-size:11px;line-height:1.55;color:var(--quiet);margin-bottom:15px}.footnote-list{display:grid;gap:13px;list-style:none}.footnote-list li{display:grid;grid-template-columns:25px 1fr;gap:10px;font-size:10px;line-height:1.55;color:var(--muted)}.footnote-list li span{font:500 9px 'JetBrains Mono',monospace;color:var(--blue)}.footnote-disclaimer{margin-top:26px;padding-top:17px;border-top:1px solid var(--border);font-size:9px;line-height:1.65;color:var(--quiet)}
+.footnote-head{display:block}.footnote-intro{max-width:880px;font-size:11px;line-height:1.55;color:var(--quiet)}.footer{padding:34px 0;border-top:1px solid var(--border);color:var(--quiet);font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-mark{font-family:'Playfair Display',serif;font-size:17px;color:var(--muted)}
+/* Final consistency system */
+.powerwerk-offer,.value,.calculator{padding:96px 0}.offer-head,.value-lead,.section-head{margin-bottom:34px}.offer-head h2,.value h2,.section-head h2{font-size:clamp(36px,4.9vw,54px);line-height:1.08;letter-spacing:-1.35px}.offer-head>p,.value-lead-copy,.section-head>p{max-width:880px;margin-top:18px;font-size:16px;line-height:1.7;color:var(--muted)}.value-grid{margin-top:0}
+.nav-dropdown-steps a span,.offer-kicker,.month,.range-scale,.loan-rate,.return-stat span,.mini-result span,.return-metric-label,.return-metric-period{font-size:10px}.footnote-list li span,.footnote-disclaimer,.offer-note{font-size:9px}
+.system-card,.offer-card,.value-card,.season-card,.box,.cost-metric,.return-column{transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+@media(hover:hover){.system-card:hover,.offer-card:hover,.value-card:hover{transform:translateY(-2px);box-shadow:0 20px 42px rgba(45,90,107,.09)}}
+.model-footnote{display:block;margin-top:48px;padding:0;border:1px solid rgba(59,160,196,.24);border-radius:18px;background:linear-gradient(180deg,rgba(237,247,251,.76),rgba(255,255,255,.92));box-shadow:0 16px 36px rgba(45,90,107,.065);overflow:hidden}.footnote-content{padding:30px 32px 26px}.footnote-head{display:block;padding-bottom:24px;border-bottom:1px solid rgba(59,160,196,.2)}.footnote-kicker{margin:0 0 10px;font-size:11px;line-height:1.35;letter-spacing:1.5px}.footnote-intro,.footnote-section>p{max-width:880px;font-size:12px;line-height:1.6;color:var(--muted)}.footnote-columns{grid-template-columns:1fr 1fr;gap:0;margin-top:0}.footnote-section{padding:26px 30px 4px 0;border-top:0}.footnote-section+.footnote-section{padding-right:0;padding-left:30px;border-left:1px solid rgba(59,160,196,.18)}.footnote-section h4{margin-bottom:8px;font-size:12px;line-height:1.35;letter-spacing:1px}.footnote-section>p{margin-bottom:18px;color:var(--quiet)}.footnote-list{gap:16px}.footnote-list li{grid-template-columns:30px 1fr;gap:11px;font-size:11px;line-height:1.6;color:var(--muted)}.footnote-list li span{display:grid;place-items:center;width:26px;height:26px;border:1px solid rgba(59,160,196,.2);border-radius:7px;background:rgba(255,255,255,.78);font-size:10px;color:var(--blue-dark)}.footnote-disclaimer{margin-top:24px;padding:17px 0 0;border-top:1px solid rgba(59,160,196,.18);font-size:10px;line-height:1.6;color:var(--quiet)}
+@media(max-width:1000px){.hero-system,.offer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.value-grid{grid-template-columns:repeat(2,1fr)}.cost-hero{grid-template-columns:1fr}.cost-detail{grid-template-columns:1fr}}
+@media(max-width:760px){.container{width:min(100% - 36px,1180px)}.calculator-meta{align-items:flex-start;flex-direction:column;gap:12px;margin-bottom:24px}.hero{padding:65px 0 68px}.hero h1{letter-spacing:-1.5px}.hero-copy{font-size:16px}.hero-system{gap:10px;margin-top:30px}.system-card{min-height:195px;padding:20px 18px}.system-icon{width:54px;height:54px;margin-bottom:20px}.system-card h3{font-size:21px}.powerwerk-offer{margin-top:58px;padding-top:42px}.offer-head{grid-template-columns:1fr;gap:17px}.offer-grid{gap:10px}.offer-card{min-height:280px;padding:22px 19px}.value{padding:70px 0}.value-lead,.section-head{grid-template-columns:1fr;gap:18px}.season-card{grid-template-columns:1fr}.months{grid-template-columns:repeat(6,1fr)}.value-source{text-align:left}.value-grid{grid-template-columns:1fr}.value-card{min-height:auto}.calculator{padding:70px 0}.calc-roadmap{grid-template-columns:1fr;gap:12px;padding:20px}.calc-roadmap::before{left:39px;right:auto;top:39px;bottom:39px;width:1px;height:auto}.roadmap-step{grid-template-columns:40px 1fr;justify-items:start;align-items:center;text-align:left}.roadmap-no{box-shadow:0 0 0 5px rgba(250,249,246,.96)}.box-head{padding:24px 20px 20px;grid-template-columns:36px 1fr}.box-no{width:34px;height:34px}.box-title{font-size:25px}.box-body{padding:22px 20px 26px}.household-grid,.return-grid,.return-bottom{grid-template-columns:1fr}.standard-options,.segmented{grid-template-columns:1fr}.segmented .choice-body{min-height:auto}.return-stat:nth-child(even){padding-left:12px}.model-footnote{grid-template-columns:1fr;gap:14px;margin-top:36px;padding-top:28px}.footnote-index{font-size:48px;letter-spacing:-2px}.footnote-head,.footnote-columns{grid-template-columns:1fr}.footnote-head{gap:12px}.footnote-columns{gap:24px;margin-top:24px}.footer-inner{align-items:flex-start;flex-direction:column}}
+@media(max-width:480px){.hero-system,.offer-grid{grid-template-columns:1fr}.system-card,.offer-card{min-height:auto}.household-grid,.binary{grid-template-columns:1fr}.return-stats{grid-template-columns:1fr}.return-stat:nth-child(even){border-left:0;padding-left:0}.input-value{font-size:21px}}
+@media(max-width:760px){.powerwerk-offer{margin-top:0;padding:70px 0}}
+@media(max-width:1000px){.return-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.return-column{padding:24px 20px}.return-card-head{align-items:flex-start;flex-direction:column;gap:5px}.return-summary,.return-impact{grid-template-columns:1fr}.return-summary .return-metric+.return-metric,.return-impact .return-metric+.return-metric{margin-top:20px;padding:20px 0 0;border-left:0;border-top:1px solid var(--border)}.return-impact{padding-top:0;border-top:0}.return-value{font-size:29px}}
+@media(max-width:760px){.model-footnote{margin-top:36px;padding:0}.footnote-content{padding:24px 20px 22px}.footnote-head{padding-bottom:20px}.footnote-columns{gap:0;margin-top:0}.footnote-section{padding:22px 0 0}.footnote-section+.footnote-section{margin-top:22px;padding:22px 0 0;border-top:1px solid rgba(59,160,196,.18);border-left:0}.footnote-list li{grid-template-columns:28px 1fr;gap:10px}}
+.calculator{padding-bottom:0}.model-footnote{display:block;width:100%;margin-top:64px;padding:42px 0 38px;border:0;border-top:1px solid var(--border);border-radius:0;background:var(--bg2);box-shadow:none;overflow:visible}.footnote-content{padding:0}.footnote-head{display:block;padding:0 0 24px;border-bottom:1px solid var(--border)}.footnote-kicker,.footnote-section h4{font-family:'JetBrains Mono',monospace;font-weight:500;text-transform:uppercase;color:var(--blue);line-height:1.35}.footnote-kicker{margin:0 0 10px;font-size:11px;letter-spacing:1.5px}.footnote-intro,.footnote-section>p{font-size:11px;line-height:1.6;color:var(--muted)}.footnote-columns{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:0}.footnote-section{padding:25px 42px 4px 0;border:0}.footnote-section+.footnote-section{padding-right:0;padding-left:42px;border-left:1px solid var(--border)}.footnote-section h4{margin:0 0 9px;font-size:10px;letter-spacing:1.25px}.footnote-section>p{margin-bottom:18px;color:var(--quiet)}.footnote-list{display:grid;gap:14px}.footnote-list li{display:grid;grid-template-columns:28px 1fr;gap:10px;font-size:10px;line-height:1.65;color:var(--muted)}.footnote-list li span{display:block;width:auto;height:auto;padding-top:1px;border:0;border-radius:0;background:none;font:500 9px 'JetBrains Mono',monospace;color:var(--blue)}.footnote-disclaimer{margin-top:25px;padding:16px 0 0;border-top:1px solid var(--border);font-size:9px;line-height:1.6;color:var(--quiet)}
+@media(max-width:760px){.model-footnote{margin-top:48px;padding:34px 0 30px}.footnote-content{padding:0}.footnote-head{padding-bottom:20px}.footnote-columns{grid-template-columns:1fr}.footnote-section{padding:22px 0 0}.footnote-section+.footnote-section{margin-top:22px;padding:22px 0 0;border-top:1px solid var(--border);border-left:0}.footnote-disclaimer{margin-top:22px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Hauptnavigation"><div class="container nav-inner"><a class="brand" href="#introducing-powerwerk">Power<span>Werk.</span></a><details class="nav-menu"><summary>Menü <span class="material-symbols-rounded nav-chevron" aria-hidden="true">keyboard_arrow_down</span></summary><div class="nav-dropdown"><a href="#introducing-powerwerk">Introducing PowerWerk</a><a href="#unser-angebot">Unser Angebot</a><a href="#ihre-vorteile">Ihre Vorteile</a><a href="#ihre-chance">Ihre Chance</a><div class="nav-dropdown-steps"><a href="#step-household"><span>01</span>Ihre Haushaltsangaben</a><a href="#step-situation"><span>02</span>Ihre Situation</a><a href="#step-investment"><span>03</span>Ihre Investition</a><a href="#step-return"><span>04</span>Ihr Return</a></div></div></details></div></nav>
+
+<header class="hero" id="introducing-powerwerk"><div class="container"><p class="eyebrow">Die moderne Energiemanufaktur.</p><h1>Ihre eigene Energiequelle.<br><em>Für Ihr Zuhause und Auto.</em></h1><p class="hero-copy">PowerWerk vereint Strom, Wärme, Kühlung und Mobilität in einem intelligenten Gesamtsystem – für weniger Kosten, mehr Komfort und mehr Freiheit. Dank unserer Komplettfinanzierung ist dafür keine Anfangsinvestition nötig: Ihre monatliche Energieersparnis deckt die Kreditrate, sodass Ihnen effektiv keine zusätzlichen monatlichen Kosten entstehen.</p><div class="hero-system" aria-label="Die Komponenten des PowerWerk Gesamtsystems">
+  <article class="system-card"><span class="system-icon solar" aria-hidden="true">☀</span><span class="system-kicker">Solaranlage</span><h3>Erzeugt Ihren Strom.</h3><p>Solarenergie vom eigenen Dach – für Haushalt, Wärme und Mobilität.</p></article>
+  <article class="system-card"><span class="system-icon climate" aria-hidden="true">°C</span><span class="system-kicker">Wärmepumpe</span><h3>Heizt und kühlt.</h3><p>Effiziente Wärme im Winter und angenehme Kühlung im Sommer.</p></article>
+  <article class="system-card"><span class="system-icon battery" aria-hidden="true"></span><span class="system-kicker">Batteriespeicher</span><h3>Speichert Ihre Energie.</h3><p>Macht Solarstrom auch abends, nachts und bei Netzausfall verfügbar.</p></article>
+  <article class="system-card"><span class="system-icon ev" aria-hidden="true">EV</span><span class="system-kicker">Wallbox</span><h3>Lädt Ihr E-Auto.</h3><p>Lädt bevorzugt mit eigener Solarenergie – direkt vom Dach in Ihr Auto.</p></article>
+</div></div></header>
+
+<main>
+<section class="powerwerk-offer" id="unser-angebot" aria-labelledby="offer-title"><div class="container">
+  <div class="offer-head"><div><p class="eyebrow">Unser Angebot</p><h2 id="offer-title">Unser komplettes Energiesystem<br>für Ihr Zuhause und Auto.</h2></div><p>PowerWerk verbindet Planung, Installation, Steuerung, Finanzierung und Absicherung zu einer einzigen, vollständig abgestimmten Energielösung.</p></div>
+  <div class="offer-grid">
+    <article class="offer-card"><span class="offer-logo" aria-hidden="true"><span class="material-symbols-rounded">home_repair_service</span></span><span class="offer-kicker">Komplettinstallation</span><h3>Eine Anlage. Perfekt abgestimmt.</h3><p>Wir planen und installieren Solaranlage, Wärmepumpe, Batterie und Wallbox als ein intelligentes Gesamtsystem – mit einem Ansprechpartner für alles.</p></article>
+    <article class="offer-card"><span class="offer-logo" aria-hidden="true"><span class="material-symbols-rounded">phone_iphone</span></span><span class="offer-kicker">PowerWerk-App</span><h3>Eine App steuert alles.</h3><p>Die PowerWerk-App optimiert Energieflüsse, Verbrauch, Speicher, Wärme und Laden automatisch – und macht Leistung und Zustand jederzeit transparent.</p></article>
+    <article class="offer-card"><span class="offer-logo" aria-hidden="true"><span class="material-symbols-rounded">payments</span></span><span class="offer-kicker">Cashflow-neutrale Finanzierung</span><h3>Heute 0 € mehr pro Monat.</h3><p>Keine Anfangsinvestition: Ihre monatliche Energieersparnis bedient den Kredit. Nach der individuell berechneten Laufzeit ist die Anlage vollständig abbezahlt – danach bleibt der volle Kostenvorteil.</p></article>
+    <article class="offer-card"><span class="offer-logo" aria-hidden="true"><span class="material-symbols-rounded">verified_user</span></span><span class="offer-kicker">Garantie &amp; Versicherung</span><h3>Rundum abgesichert.</h3><p>Garantie, Effizienzüberwachung und Versicherung schützen das Gesamtsystem gegen technische Defekte und definierte Ausfallrisiken. PowerWerk koordiniert Service und Wiederherstellung.</p></article>
+  </div>
+  <p class="offer-note">Finanzierung, Laufzeit, Garantieumfang und Versicherungsschutz sind abhängig von individueller Prüfung und den jeweiligen Vertragsbedingungen.</p>
+</div></section>
+<section class="value" id="ihre-vorteile" aria-labelledby="value-title"><div class="container">
+  <div class="value-lead"><div><p class="eyebrow">Ihre Vorteile</p><h2 id="value-title">Weniger Kosten.<br>Mehr Komfort.<br>Höhere Sicherheit.</h2></div><p class="value-lead-copy">PowerWerk macht Ihr Zuhause unabhängiger und sicherer – mit eigener Energie und deutlich weniger Emissionen.</p></div>
+  <div class="value-grid">
+    <article class="value-card"><span class="value-logo" aria-hidden="true"><span class="material-symbols-rounded">savings</span></span><h3>Energiekosten signifikant senken.</h3><p>Solarstrom, Wärmepumpe und intelligentes Laden reduzieren die laufenden Ausgaben für Strom, Wärme und Mobilität im Musterhaushalt um rund 3.000–3.700 € pro Jahr.</p></article>
+    <article class="value-card"><span class="value-logo" aria-hidden="true"><span class="material-symbols-rounded">thermostat</span></span><h3>Spürbar mehr Wohnkomfort.</h3><p>Gleichmäßige Wärme im Winter, angenehme Kühlung im Sommer und präzise Raumtemperaturen schaffen zu jeder Jahreszeit ein besseres Wohngefühl.</p></article>
+    <article class="value-card"><span class="value-logo" aria-hidden="true"><span class="material-symbols-rounded">solar_power</span></span><h3>Unabhängiger mit eigener Solarenergie.</h3><p>Strom vom eigenen Dach und Wärme ohne Öl und Gas entkoppeln Ihren Haushalt weitgehend von Lieferengpässen, geopolitischen Konflikten und sprunghaften Energiepreisen.</p></article>
+    <article class="value-card"><span class="value-logo" aria-hidden="true"><span class="material-symbols-rounded">shield</span></span><h3>Sicherheit bei Netzausfall.</h3><p>Bei einem Stromausfall bilden Solaranlage und Batterie automatisch ein eigenes Inselnetz. Wichtige Verbraucher bleiben versorgt; bei Tageslicht lädt die Solaranlage die Batterie weiter.</p></article>
+    <article class="value-card"><span class="value-logo" aria-hidden="true"><span class="material-symbols-rounded">co2</span></span><h3>Deutlich weniger Emissionen.</h3><p>Ohne lokale Verbrennung von Öl, Gas oder Benzin vermeidet das Gesamtsystem im Musterhaushalt rund 5–7 Tonnen CO₂ pro Jahr.</p></article>
+    <article class="value-card"><span class="value-logo" aria-hidden="true"><span class="material-symbols-rounded">home</span></span><h3>Wertsteigerung Ihrer Immobilie.</h3><p>Moderne Energieinfrastruktur, niedrige Betriebskosten und echte Ersatzstromfähigkeit machen Ihr Haus attraktiver, zukunftsfähiger und leichter vermarktbar.</p></article>
+  </div>
+  <article class="season-card"><div><h3>Solar durch den Sommer.<br>Netzstrom nur, wenn er wirklich gebraucht wird.</h3><p>Im Winter ergänzt das Netz die geringeren Solarerträge. Öl und Gas entfallen ganzjährig; bei E-Mobilität auch Benzin. Ein Heimspeicher verschiebt Solarstrom vom Tag in die Nacht – nicht vom Sommer in den Winter.</p></div><div class="months" aria-label="Monatliche Eigenversorgung"><span class="month">JAN</span><span class="month">FEB</span><span class="month on">MÄR</span><span class="month strong">APR</span><span class="month strong">MAI</span><span class="month strong">JUN</span><span class="month strong">JUL</span><span class="month strong">AUG</span><span class="month strong">SEP</span><span class="month on">OKT</span><span class="month">NOV</span><span class="month">DEZ</span></div></article>
+  <p class="value-source">Einordnung zur saisonalen Speicherung: <a href="https://www.verbraucherzentrale.de/wissen/energie/erneuerbare-energien/lohnen-sich-batteriespeicher-fuer-photovoltaikanlagen-24589" target="_blank" rel="noopener">Verbraucherzentrale</a></p>
+</div></section>
+
+<section class="calculator" id="ihre-chance" aria-labelledby="calculator-title"><div class="container">
+  <div class="calculator-meta"><span class="nav-note"><i class="live-dot"></i>Ihre Berechnung aktualisiert sich live</span><span class="nav-tag">Interaktiver Rechner</span></div>
+  <div class="section-head"><div><p class="eyebrow">Ihre Chance</p><h2 id="calculator-title">Wie groß ist Ihr persönliches<br>Energiepotenzial?</h2></div><p>Vier Schritte zeigen, welche Lösung zu Ihrem Haushalt passt, was sie kostet und welchen finanziellen sowie ökologischen Nutzen sie schafft.</p></div>
+  <nav class="calc-roadmap" aria-label="Die vier Schritte des PowerWerk-Rechners">
+    <a class="roadmap-step" href="#step-household"><span class="roadmap-no">01</span><span class="roadmap-label">Ihre Haushaltsangaben</span></a>
+    <a class="roadmap-step" href="#step-situation"><span class="roadmap-no">02</span><span class="roadmap-label">Ihre Situation</span></a>
+    <a class="roadmap-step" href="#step-investment"><span class="roadmap-no">03</span><span class="roadmap-label">Ihre Investition</span></a>
+    <a class="roadmap-step" href="#step-return"><span class="roadmap-no">04</span><span class="roadmap-label">Ihr Return</span></a>
+  </nav>
+  <form class="calc-form" id="calculator">
+    <section class="box" id="step-household" aria-labelledby="household-title"><header class="box-head"><span class="box-no">01</span><div><p class="box-kicker">Ihre Haushaltsangaben</p><h3 class="box-title" id="household-title">Wie leben Sie heute?</h3><p class="box-sub">Größe und Energiebedarf bestimmen die Dimensionierung des Systems.</p></div></header><div class="box-body household-grid">
+      <div class="input-card"><div class="input-top"><div><div class="input-label">Personen im Haushalt</div><div class="input-help">Von Single-Haushalt bis Großfamilie</div></div></div><div class="stepper"><button type="button" id="peopleMinus" aria-label="Eine Person weniger">−</button><output class="stepper-output" id="peopleOutput">2 <span>Personen</span></output><button type="button" id="peoplePlus" aria-label="Eine Person mehr">+</button></div><input type="hidden" name="people" id="people" value="2"></div>
+      <div class="input-card"><div class="input-top"><div><div class="input-label">Wohnfläche</div><div class="input-help">Beheizte Fläche des Hauses</div></div><output class="input-value" id="areaOutput">140 m²</output></div><input class="range" type="range" name="area" id="area" min="60" max="300" step="10" value="140"><div class="range-scale"><span>60 m²</span><span>300 m²</span></div></div>
+      <div class="input-card"><div class="input-top"><div><div class="input-label">Energetischer Zustand</div><div class="input-help">Beeinflusst Wärmebedarf und Anlagengröße</div></div></div><div class="standard-options"><label class="choice"><input type="radio" name="standard" value="modern"><span class="choice-body"><span class="choice-code">A–B</span><span class="choice-title">Modern</span></span></label><label class="choice"><input type="radio" name="standard" value="average" checked><span class="choice-body"><span class="choice-code">C–E</span><span class="choice-title">Durchschnitt</span></span></label><label class="choice"><input type="radio" name="standard" value="old"><span class="choice-body"><span class="choice-code">F–H</span><span class="choice-title">Unsaniert</span></span></label></div></div>
+      <div class="input-card"><div class="input-top"><div><div class="input-label">Fahrleistung pro Jahr</div><div class="input-help">Für Mobilitätskosten und CO₂-Wirkung</div></div><output class="input-value" id="kmOutput">15.000 km</output></div><input class="range" type="range" name="km" id="km" min="5000" max="30000" step="1000" value="15000"><div class="range-scale"><span>5.000 km</span><span>30.000 km</span></div></div>
+    </div></section>
+
+    <section class="box" id="step-situation" aria-labelledby="situation-title"><header class="box-head"><span class="box-no">02</span><div><p class="box-kicker">Ihre Situation</p><h3 class="box-title" id="situation-title">Welche Investitionen stehen an?</h3><p class="box-sub">Ohnehin notwendige Ausgaben werden separat betrachtet – nicht pauschal dem Energiesystem zugerechnet.</p></div></header><div class="box-body situation-stack">
+      <fieldset class="question"><legend class="question-top"><span class="question-no">01</span><span><h3>Wie sieht Ihre Mobilität aus?</h3><p>Bestimmt Fahrzeugkosten, Wallbox, laufende Ersparnis und CO₂-Wirkung.</p></span></legend><div class="segmented"><label class="choice"><input type="radio" name="vehicle" value="existing" checked><span class="choice-body"><span class="choice-code">EV · 01</span><span class="choice-title">E-Auto vorhanden</span><span class="choice-sub">Solarstrom statt Netzstrom laden</span></span></label><label class="choice"><input type="radio" name="vehicle" value="switch"><span class="choice-body"><span class="choice-code">EV · 02</span><span class="choice-title">Auf E-Auto wechseln</span><span class="choice-sub">Kauf und Verkauf einrechnen</span></span></label><label class="choice"><input type="radio" name="vehicle" value="combustion"><span class="choice-body"><span class="choice-code">ICE · 03</span><span class="choice-title">Verbrenner behalten</span><span class="choice-sub">Ohne Wallbox und Fahrzeugwechsel</span></span></label></div></fieldset>
+      <fieldset class="question"><legend class="question-top"><span class="question-no">02</span><span><h3>Neue Heizung ohnehin erforderlich?</h3><p>Dann wird eine neue Gasheizung als anstehende Alternativausgabe berücksichtigt.</p></span></legend><div class="binary"><label class="choice"><input type="radio" name="heating" value="yes" checked><span class="choice-body"><span class="choice-code">JA</span><span class="choice-title">Heizung ist fällig</span></span></label><label class="choice"><input type="radio" name="heating" value="no"><span class="choice-body"><span class="choice-code">NEIN</span><span class="choice-title">Heizung kann bleiben</span></span></label></div></fieldset>
+      <fieldset class="question"><legend class="question-top"><span class="question-no">03</span><span><h3>Neue Fenster erforderlich?</h3><p>Kosten und Effizienzgewinn skalieren mit der Wohnfläche.</p></span></legend><div class="binary"><label class="choice"><input type="radio" name="windows" value="yes"><span class="choice-body"><span class="choice-code">JA</span><span class="choice-title">Fenster erneuern</span></span></label><label class="choice"><input type="radio" name="windows" value="no" checked><span class="choice-body"><span class="choice-code">NEIN</span><span class="choice-title">Fenster bleiben</span></span></label></div></fieldset>
+      <fieldset class="question"><legend class="question-top"><span class="question-no">04</span><span><h3>Neue Dacheindeckung erforderlich?</h3><p>Gemeinsames Gerüst und abgestimmte Montage reduzieren die PV-Mehrkosten.</p></span></legend><div class="binary"><label class="choice"><input type="radio" name="roof" value="yes"><span class="choice-body"><span class="choice-code">JA</span><span class="choice-title">Dach ist fällig</span></span></label><label class="choice"><input type="radio" name="roof" value="no" checked><span class="choice-body"><span class="choice-code">NEIN</span><span class="choice-title">Dach bleibt</span></span></label></div></fieldset>
+      <fieldset class="question"><legend class="question-top"><span class="question-no">05</span><span><h3>Klimatisierung integrieren?</h3><p>Die reversible Wärmepumpe kühlt und entfeuchtet mit PV-Überschuss.</p></span></legend><div class="binary"><label class="choice"><input type="radio" name="climate" value="yes"><span class="choice-body"><span class="choice-code">JA</span><span class="choice-title">Heizen und kühlen</span></span></label><label class="choice"><input type="radio" name="climate" value="no" checked><span class="choice-body"><span class="choice-code">NEIN</span><span class="choice-title">Nur heizen</span></span></label></div></fieldset>
+    </div></section>
+
+    <section class="box" id="step-investment" aria-labelledby="cost-title" aria-live="polite"><header class="box-head"><span class="box-no">03</span><div><p class="box-kicker">Ihre Investition</p><h3 class="box-title" id="cost-title">Was kostet das gewählte Gesamtpaket?</h3><p class="box-sub">Vollständiger Preis, geschätzte Förderung und eine cashflow-neutrale Finanzierung auf Basis Ihrer Ersparnis.</p></div></header><div class="box-body">
+      <div class="cost-hero"><article class="cost-metric"><div class="metric-label">Gesamtkosten</div><div class="metric-value" id="grossValue">71.000 €</div><div class="metric-note">Alle gewählten Maßnahmen</div></article><article class="cost-metric primary"><div class="metric-label" id="netLabel">Nach Förderung</div><div class="metric-value" id="netValue">58.120 €</div><div class="metric-note" id="netNote">Nach geschätzter Förderung</div></article><article class="cost-metric"><div class="metric-label">Monatliche Kreditrate</div><div class="metric-value" id="loanValue">279 €</div><div class="metric-note" id="loanNote">Entspricht der monatlichen Energieersparnis</div><span class="loan-rate" id="loanTerm">15,8 Jahre · 3,6 % effektiv</span></article></div>
+      <div class="cost-detail"><div class="cost-list" id="costList"></div><aside class="cost-explain"><strong>Wirtschaftlich entscheidend</strong>Von den Kosten nach Förderung werden Ausgaben abgezogen, die für Heizung, Fenster, Dach oder Ersatzfahrzeug ohnehin anstehen.<div class="big" id="incrementalValue">40.120 €</div><span>tatsächliche Mehrinvestition gegenüber den gewählten Alternativen</span><a class="source-link" href="https://www.bundesbank.de/de/statistiken/indikatorensaetze/indikatorensystem-wohnimmobilienmarkt/zinssaetze-fuer-wohnungsbaukredite-an-private-haushalte-in-deutschland-615312" target="_blank" rel="noopener">Zinsorientierung: Deutsche Bundesbank</a></aside></div>
+    </div></section>
+
+    <section class="box" id="step-return" aria-labelledby="return-title" aria-live="polite"><header class="box-head"><span class="box-no">04</span><div><p class="box-kicker">Ihr Return</p><h3 class="box-title" id="return-title">Was kommt für Haushalt und Bewohner zurück?</h3><p class="box-sub">Finanzieller Nutzen und CO₂-Wirkung – gemeinsam und pro Kopf.</p></div></header><div class="box-body">
+      <div class="return-grid">
+        <article class="return-column accent">
+          <header class="return-card-head"><div class="return-label">Pro Haushalt</div><div class="return-context">Gesamter Haushalt</div></header>
+          <div class="return-summary">
+            <div class="return-metric"><b class="return-value" id="householdSaving">3.000–3.700 €</b><span class="return-metric-label">Energiekostenersparnis</span><small class="return-metric-period">Pro Jahr</small></div>
+            <div class="return-metric"><b class="return-value relative" id="householdCostReduction">61 %</b><span class="return-metric-label">Weniger Energiekosten</span><small class="return-metric-period">Ggü. Vergleichshaushalt</small></div>
+          </div>
+          <div class="return-impact">
+            <div class="return-metric"><b class="return-value" id="householdMonth">279 €</b><span class="return-metric-label">Energiekostenersparnis</span><small class="return-metric-period">Pro Monat</small></div>
+            <div class="return-metric"><b class="return-value" id="householdCo2">5,0–6,5 t</b><span class="return-metric-label">CO₂-Einsparung</span><small class="return-metric-period">Pro Jahr</small></div>
+            <div class="return-metric"><b class="return-value relative" id="householdCo2Reduction">62 %</b><span class="return-metric-label">Weniger CO₂</span><small class="return-metric-period">Ggü. Vergleichshaushalt</small></div>
+          </div>
+        </article>
+        <article class="return-column accent">
+          <header class="return-card-head"><div class="return-label">Pro Kopf</div><div class="return-context" id="personContext">Bei 2 Personen im Haushalt</div></header>
+          <div class="return-summary">
+            <div class="return-metric"><b class="return-value" id="personSaving">1.500–1.850 €</b><span class="return-metric-label">Energiekostenersparnis</span><small class="return-metric-period">Pro Jahr</small></div>
+            <div class="return-metric"><b class="return-value relative" id="personCostReduction">61 %</b><span class="return-metric-label">Weniger Energiekosten</span><small class="return-metric-period">Ggü. Durchschnitt pro Kopf</small></div>
+          </div>
+          <div class="return-impact">
+            <div class="return-metric"><b class="return-value" id="personMonth">140 €</b><span class="return-metric-label">Energiekostenersparnis</span><small class="return-metric-period">Pro Monat</small></div>
+            <div class="return-metric"><b class="return-value" id="personCo2">2,5–3,3 t</b><span class="return-metric-label">CO₂-Einsparung</span><small class="return-metric-period">Pro Jahr</small></div>
+            <div class="return-metric"><b class="return-value relative" id="personCo2Reduction">62 %</b><span class="return-metric-label">Weniger CO₂</span><small class="return-metric-period">Ggü. Durchschnitt pro Kopf</small></div>
+          </div>
+        </article>
+      </div>
+      <div class="return-bottom"><article class="mini-result"><span>Amortisation</span><b id="paybackValue">15,8 Jahre</b></article><article class="mini-result"><span>Nettovorteil nach 20 Jahren</span><b id="lifetimeValue">14.427 €</b></article><article class="mini-result"><span>Nahezu eigenversorgt</span><b id="monthsValue">8 Monate / Jahr</b></article></div>
+      <p class="return-note" id="returnNote">Dimensioniert für rund 15 kWp Photovoltaik und 15 kWh Batteriespeicher. Die monatliche Eigenversorgung ist wetter- und verbrauchsabhängig.</p>
+    </div></section>
+  </form>
+</div>
+  <aside class="model-footnote" aria-labelledby="model-footnote-title">
+    <div class="container footnote-content">
+      <div class="footnote-head"><div><p class="footnote-kicker" id="model-footnote-title">Rechner Annahmen</p><p class="footnote-intro">Eine belastbare Planung benötigt Verbrauchsdaten, Gebäudeprüfung, Angebote und eine individuelle Förderprüfung. Dieser Rechner liefert eine konsistente erste Orientierung.</p></div></div>
+      <div class="footnote-columns">
+        <section class="footnote-section"><h4>Technische Modellierung</h4><p>Das System skaliert mit Wohnfläche, Bewohnern und Gebäudezustand.</p><ol class="footnote-list"><li><span>01</span><div>PV-Leistung: 8–22 kWp; Batteriespeicher: 8–22 kWh. Der Standardfall mit 140 m² und zwei Personen ergibt 15 kWp und 15 kWh.</div></li><li><span>02</span><div>Wärmepumpe, Fenster, Dach und Klimatisierung skalieren mit der Wohnfläche; der energetische Zustand beeinflusst Wärmebedarf und Nutzen.</div></li><li><span>03</span><div>Die relativen Kosten- und CO₂-Werte vergleichen das Ergebnis mit einem konventionell versorgten Durchschnittshaushalt gleicher Größe, Wohnfläche und Fahrleistung. Wetter, Nutzerverhalten, Energiepreise und reale Systemeffizienz verändern das Ergebnis.</div></li></ol></section>
+        <section class="footnote-section"><h4>Finanzielle Modellierung</h4><p>Förderung und Finanzierung sind bewusst als Modellannahmen gekennzeichnet.</p><ol class="footnote-list"><li><span>01</span><div>Wärmepumpenförderung: modellhaft 40 % von maximal 32.200 € förderfähigen Kosten. Weitere Zuschüsse werden nicht angesetzt.</div></li><li><span>02</span><div>Finanziert wird die tatsächliche Mehrinvestition. Die monatliche Rate entspricht der durchschnittlichen Energieersparnis; bei 3,6 % Modellzins ergibt sich daraus die dynamische Laufzeit.</div></li><li><span>03</span><div>Ohnehin anstehende Alternativkosten werden von der Mehrinvestition abgezogen. Kreditlaufzeit und Amortisation sind identisch; der zusätzliche monatliche Cashflow beträgt 0 €.</div></li></ol></section>
+      </div>
+      <p class="footnote-disclaimer">Unverbindliche Modellrechnung, keine Finanzierungs-, Förder- oder Energieberatung. Individuelle Konditionen können deutlich abweichen.</p>
+    </div>
+  </aside>
+</section>
+</main>
+
+<footer class="footer"><div class="container footer-inner"><span class="footer-mark">PowerWerk.</span><span>Private Modellrechnung · Stand August 2026</span></div></footer>
+
+<script>
+const form=document.getElementById('calculator');
+const navMenu=document.querySelector('.nav-menu');
+document.querySelectorAll('.nav-dropdown a').forEach(link=>link.addEventListener('click',()=>navMenu.removeAttribute('open')));
+document.addEventListener('click',event=>{if(navMenu.open&&!navMenu.contains(event.target))navMenu.removeAttribute('open')});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')navMenu.removeAttribute('open')});
+const euro=new Intl.NumberFormat('de-DE',{maximumFractionDigits:0});
+const oneDecimal=new Intl.NumberFormat('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1});
+const integer=new Intl.NumberFormat('de-DE',{maximumFractionDigits:0});
+const clamp=(min,max,value)=>Math.min(max,Math.max(min,value));
+const money=value=>euro.format(Math.round(value))+' €';
+const rangeMoney=(min,max)=>euro.format(Math.round(min))+'–'+euro.format(Math.round(max))+' €';
+const selected=name=>form.elements[name].value;
+
+function setRangeFill(input){const pct=(input.value-input.min)/(input.max-input.min)*100;input.style.setProperty('--fill',pct+'%')}
+function payoffMonths(principal,annualRate,payment){
+  if(principal<=0)return 0;
+  if(payment<=0)return Infinity;
+  const rate=annualRate/12;
+  if(rate===0)return Math.ceil(principal/payment);
+  if(payment<=principal*rate)return Infinity;
+  return Math.ceil(-Math.log(1-principal*rate/payment)/Math.log(1+rate));
+}
+function totalLoanPayments(principal,annualRate,payment,months){
+  if(principal<=0)return 0;
+  if(!Number.isFinite(months))return Infinity;
+  const rate=annualRate/12;
+  if(rate===0)return principal;
+  const fullPayments=Math.max(0,months-1);
+  const growth=Math.pow(1+rate,fullPayments);
+  const remaining=principal*growth-payment*(growth-1)/rate;
+  const finalPayment=Math.min(payment,Math.max(0,remaining*(1+rate)));
+  return fullPayments*payment+finalPayment;
+}
+
+function calculate(){
+  const people=Number(form.elements.people.value);
+  const area=Number(form.elements.area.value);
+  const km=Number(form.elements.km.value);
+  const standard=selected('standard');
+  const vehicle=selected('vehicle');
+  const heating=selected('heating')==='yes';
+  const windows=selected('windows')==='yes';
+  const roof=selected('roof')==='yes';
+  const climate=form.elements.climate.value==='yes';
+  const standardFactor={modern:.82,average:1,old:1.22}[standard];
+  const areaRatio=area/140;
+  const kmRatio=km/15000;
+  const peopleRatio=people/2;
+  const homeScale=clamp(.45,2.8,.72*areaRatio*standardFactor+.28*peopleRatio);
+
+  const pvKwp=clamp(8,22,11+area/35+(people-2)*.45);
+  const batteryKwh=clamp(8,22,pvKwp+(people-2)*.35);
+  const heatPumpCost=28000+area*50*standardFactor;
+  const pvCost=pvKwp*1050;
+  const batteryCost=batteryKwh*650;
+  const energyHubCost=8500;
+  const wallboxCost=vehicle==='combustion'?0:2000;
+  const climateCost=climate?4000+area*14.2857:0;
+  const windowsCost=windows?area*200:0;
+  const roofCost=roof?area*178.5714:0;
+  const roofSynergy=roof?4000*Math.pow(areaRatio,.6):0;
+  const vehicleCost=vehicle==='switch'?42000:0;
+  const gross=heatPumpCost+pvCost+batteryCost+energyHubCost+wallboxCost+climateCost+windowsCost+roofCost-roofSynergy+vehicleCost;
+  const grant=Math.min(heatPumpCost,32200)*.4;
+  const sale=vehicle==='switch'?10000:0;
+  const net=gross-grant-sale;
+  const gasAlternative=12000+area*42.8571;
+  const unavoidable=(heating?gasAlternative:0)+(windows?windowsCost:0)+(roof?roofCost:0)+(vehicle==='switch'?22000:0);
+  const incremental=Math.max(0,net-unavoidable);
+
+  let saveMin=2400*homeScale,saveMax=2900*homeScale;
+  let baseline=4500*homeScale;
+  if(vehicle==='existing'){saveMin+=600*kmRatio;saveMax+=800*kmRatio;baseline+=1000*kmRatio}
+  if(vehicle==='switch'){saveMin+=1500*kmRatio;saveMax+=1900*kmRatio;baseline+=2500*kmRatio}
+  if(vehicle==='combustion'){baseline+=2500*kmRatio}
+  if(windows){const windowGain=areaRatio*(standard==='old'?1.25:standard==='modern'?.65:1);saveMin+=450*windowGain;saveMax+=650*windowGain}
+  if(climate){saveMin-=120*areaRatio;saveMax-=60*areaRatio}
+  saveMin=Math.max(0,saveMin);saveMax=Math.max(saveMin,saveMax);
+  const saveAvg=(saveMin+saveMax)/2;
+  const reduction=Math.round(saveAvg/baseline*100);
+  const modelRate=.036;
+  const monthlySaving=saveAvg/12;
+  const monthlyLoan=incremental>0?monthlySaving:0;
+  const loanMonths=payoffMonths(incremental,modelRate,monthlyLoan);
+  const cashflowNeutral=Number.isFinite(loanMonths);
+  const payback=cashflowNeutral?loanMonths/12:Infinity;
+  const financedTotal=totalLoanPayments(incremental,modelRate,monthlyLoan,loanMonths);
+  const lifetime=cashflowNeutral?saveAvg*20-financedTotal:-Infinity;
+
+  let co2Min=4.5*homeScale,co2Max=5.8*homeScale;
+  if(vehicle==='existing'){co2Min+=.5*kmRatio;co2Max+=.7*kmRatio}
+  if(vehicle==='switch'){co2Min+=1.7*kmRatio;co2Max+=2.2*kmRatio}
+  if(windows){co2Min+=.5*areaRatio;co2Max+=.8*areaRatio}
+  if(climate){co2Min-=.1*areaRatio;co2Max-=.05*areaRatio}
+  co2Min=Math.max(0,co2Min);co2Max=Math.max(co2Min,co2Max);
+  const co2Avg=(co2Min+co2Max)/2;
+  let co2Baseline=7.2*homeScale+2.1*kmRatio;
+  if(windows)co2Baseline+=.8*areaRatio;
+  const co2Reduction=Math.round(clamp(0,95,co2Avg/co2Baseline*100));
+  const energyDemandIndex=homeScale+(vehicle==='combustion'?0:.25*kmRatio);
+  const coverage=(pvKwp/15)/energyDemandIndex;
+  const independentMonths=Math.round(clamp(4,8,5.4+coverage*2.8));
+
+  document.getElementById('grossValue').textContent=money(gross);
+  document.getElementById('netLabel').textContent=sale?'Nach Förderung & Verkauf':'Nach Förderung';
+  document.getElementById('netValue').textContent=money(net);
+  document.getElementById('netNote').textContent=sale?'Nach Förderung und Fahrzeugverkauf':'Nach geschätzter Förderung';
+  document.getElementById('loanValue').textContent=money(monthlyLoan);
+  document.getElementById('loanNote').textContent=incremental>0?'Entspricht der monatlichen Energieersparnis':'Keine zusätzliche Finanzierung erforderlich';
+  document.getElementById('loanTerm').textContent=incremental<=0?'Keine Laufzeit':cashflowNeutral?oneDecimal.format(payback)+' Jahre · 3,6 % effektiv':'Bei 3,6 % nicht vollständig tilgbar';
+  document.getElementById('incrementalValue').textContent=money(incremental);
+  document.getElementById('householdSaving').textContent=rangeMoney(saveMin,saveMax);
+  document.getElementById('householdCostReduction').textContent=reduction+' %';
+  document.getElementById('householdMonth').textContent=money(saveAvg/12);
+  document.getElementById('householdCo2').textContent=oneDecimal.format(co2Min)+'–'+oneDecimal.format(co2Max)+' t';
+  document.getElementById('householdCo2Reduction').textContent=co2Reduction+' %';
+  document.getElementById('personSaving').textContent=rangeMoney(saveMin/people,saveMax/people);
+  document.getElementById('personCostReduction').textContent=reduction+' %';
+  document.getElementById('personContext').textContent='Bei '+people+' '+(people===1?'Person':'Personen')+' im Haushalt';
+  document.getElementById('personMonth').textContent=money(saveAvg/people/12);
+  document.getElementById('personCo2').textContent=oneDecimal.format(co2Min/people)+'–'+oneDecimal.format(co2Max/people)+' t';
+  document.getElementById('personCo2Reduction').textContent=co2Reduction+' %';
+  document.getElementById('paybackValue').textContent=cashflowNeutral?oneDecimal.format(payback)+' Jahre':'nicht erreichbar';
+  document.getElementById('lifetimeValue').textContent=cashflowNeutral?(lifetime<0?'−':'')+money(Math.abs(lifetime)):'—';
+  document.getElementById('monthsValue').textContent=independentMonths+' Monate / Jahr';
+  document.getElementById('returnNote').textContent='Dimensioniert für rund '+oneDecimal.format(pvKwp)+' kWp Photovoltaik und '+oneDecimal.format(batteryKwh)+' kWh Batteriespeicher. Die monatliche Eigenversorgung ist wetter- und verbrauchsabhängig.';
+
+  const lines=[
+    ['Wärmepumpe',money(heatPumpCost)],['Photovoltaik · '+oneDecimal.format(pvKwp)+' kWp',money(pvCost)],['Batteriespeicher · '+oneDecimal.format(batteryKwh)+' kWh',money(batteryCost)],['Energiemanagement & Ersatzstrom',money(energyHubCost)],
+    ...(wallboxCost?[['Wallbox',money(wallboxCost)]]:[]),...(climate?[['Integrierte Klimatisierung',money(climateCost)]]:[]),...(windows?[['Neue Fenster',money(windowsCost)]]:[]),...(roof?[['Neue Dacheindeckung',money(roofCost)],['Synergie Dach + PV','−'+money(roofSynergy)]]:[]),...(vehicle==='switch'?[['Neues E-Auto',money(vehicleCost)]]:[]),
+    ['Gesamtkosten',money(gross),'total'],['Wärmepumpenförderung','−'+money(grant)],...(sale?[['Fahrzeugverkauf','−'+money(sale)]]:[]),['Nach Förderung',money(net),'total']
+  ];
+  document.getElementById('costList').innerHTML=lines.map(line=>'<div class="cost-line '+(line[2]||'')+'"><span>'+line[0]+'</span><b>'+line[1]+'</b></div>').join('');
+}
+
+function updatePeople(next){const input=form.elements.people;input.value=clamp(1,8,next);document.getElementById('peopleOutput').innerHTML=input.value+' <span>'+(Number(input.value)===1?'Person':'Personen')+'</span>';calculate()}
+document.getElementById('peopleMinus').addEventListener('click',()=>updatePeople(Number(form.elements.people.value)-1));
+document.getElementById('peoplePlus').addEventListener('click',()=>updatePeople(Number(form.elements.people.value)+1));
+form.elements.area.addEventListener('input',event=>{document.getElementById('areaOutput').textContent=event.target.value+' m²';setRangeFill(event.target);calculate()});
+form.elements.km.addEventListener('input',event=>{document.getElementById('kmOutput').textContent=integer.format(event.target.value)+' km';setRangeFill(event.target);calculate()});
+form.addEventListener('change',calculate);
+setRangeFill(form.elements.area);setRangeFill(form.elements.km);calculate();
+</script>
+</body>
+</html>
