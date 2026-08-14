@@ -14,6 +14,6 @@
     <path d="m50 35.4 13-1.5-14-3.2Z"/>
   </g>
 
-  <path d="M13 40a19 19 0 0 1 38 0Z" fill="#2D5A6B" stroke="#FAF9F6" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M13 40a19 19 0 0 1 38 0Z" fill="#1A1A1A" stroke="#FAF9F6" stroke-width="2.4" stroke-linejoin="round"/>
   <path d="M4 49.5Q32 37.5 60 49.5v5Q32 43 4 54.5Z" fill="#3BA0C4" stroke="#FAF9F6" stroke-width="2.4" stroke-linejoin="round"/>
 </svg>
